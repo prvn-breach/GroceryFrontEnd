@@ -1,0 +1,83 @@
+#!/bin/bash
+
+# This is a helper script to run a command  on docker container from host machine
+# Usage: ./dock container_name command_to_run param1 param2 param3
+
+# This script assumes user has followed below conventions
+#     1. User has home folder like /home/moin
+#     2. User has all web projects inside /home/moin/www
+#     3. User has mounted /home/moin/www to /var/www on docker container
+
+# User home directory is mapped to /var on docker container. Modify as required.
+# Example: HOST:/home/moin => CONTAINER:/var
+# Any subfolders like www are mapped automatically
+# Example: HOST:/home/moin/www/restify => CONTAINER:/var/www/restify
+MAP_HOST_DIR="${HOME}"
+MAP_CONTAINER_DIR="/var"
+
+
+
+
+#########################
+# Do not edit below this
+#########################
+
+# Modify container name and working directory as required
+container_name="$1"
+
+# Validate if container name is passed
+if [ -z "${container_name}" ] ;
+then
+	echo -e "Missing container_name"
+    echo -e "Usage: ${0} container_name command_to_run param1 param2 param3\n"
+    exit 1
+fi
+
+# Validate if container name is valid docker container
+if [ "$(docker inspect -f '{{.State.Running}}' ${container_name})" != "true" ] ;
+then 
+    echo -e "Docker container '${container_name}' is not running"
+    echo -e "\nList of running Docker containers:"
+    docker ps --format '{{.Names}}'
+    echo -e "\n"
+    exit 1
+fi
+
+# Validate if atleast simple command is passed as $2
+if [ -z "${2}" ] ;
+then
+	echo -e "Missing command to run on docker container"
+    echo -e "Usage: ${0} container_name command_to_run param1 param2 param3\n"
+    exit 1
+fi
+
+# Map host working dir to container working dir
+host_working_dir="${PWD}"
+# echo "${host_working_dir}"
+container_working_dir="${host_working_dir/$MAP_HOST_DIR/$MAP_CONTAINER_DIR}"
+
+# Ensure container working dir starts with mapped container dir to avoid accidental execution in unwanted folders
+if  [[ $container_working_dir != ${MAP_CONTAINER_DIR}* ]] ;
+then
+    echo "Failed to execute docker command"
+    echo "Container working dir must start with '${MAP_CONTAINER_DIR}'"
+	echo "Container working dir resolved to '${container_working_dir}'"
+fi
+
+# echo "${container_working_dir}"
+
+# Command to run. We forward all params to this script to actual command
+COMMAND="$2 $3 $4 $5 $6 $7 $8 $9 ${10}"
+
+# We login into container as current user UID and run command
+# We set GID to be same as UID
+GID=${UID}
+
+# echo "${COMMAND}"
+# exit 0
+
+# Run command
+docker exec -u ${UID}:${GID} -w ${container_working_dir} -it ${container_name} ${COMMAND}
+
+
+
