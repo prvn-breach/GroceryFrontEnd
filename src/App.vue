@@ -5,7 +5,7 @@
         <h3 class="logo">Grocery</h3>
         <!-- <b-img  alt="no image"  class="logo"></b-img> -->
 
-        <!--categories--->
+        <!--categories-->
         <div class="dropdown">
           <button
             class="categories dropdown-toggle"

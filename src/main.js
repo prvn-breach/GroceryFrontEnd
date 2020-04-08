@@ -37,7 +37,8 @@ import {
     faSearch,
     faHeart,
     faStar,
-    faStarHalf
+    faStarHalf,
+    faShoppingBasket
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 library.add(
@@ -67,7 +68,8 @@ library.add(
     faThLarge,
     faHeart,
     faStar,
-    faStarHalf
+    faStarHalf,
+    faShoppingBasket
 );
 Vue.component("font-awesome-icon", FontAwesomeIcon);
 
