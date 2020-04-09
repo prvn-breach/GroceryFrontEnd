@@ -62,9 +62,11 @@
         <h1>Login to Your Account</h1>
         <br />
         <form>
-          <input type="text" name="user" placeholder="Username" />
-          <input type="password" name="pass" placeholder="Password" />
-          <input type="submit" name="login" class="login loginmodal-submit" value="Login" />
+          <input type="text" name="user" />
+          <label class="input-label">Username</label>
+          <input type="text" name="pass" />
+          <label class="input-label">Password</label>
+          <button>Login</button>
         </form>
 
         <div class="login-help">

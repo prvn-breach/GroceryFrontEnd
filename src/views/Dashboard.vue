@@ -77,12 +77,18 @@
             </div>
             <div class="product-footer">
               <h6>MRP Rs 100</h6>
-                <div class="input-group product-quantity">
+                <!-- <div class="input-group product-quantity">
                   <span class="input-group-addon">Qty</span>
                   <input type="number" class="form-control text-center" value="1">  
                   <button class="form-control addcart">Add
                     <font-awesome-icon icon="shopping-basket" class="shopping-basket"></font-awesome-icon>  
                   </button>   
+                </div> -->
+
+                <div class="input-group product-count">
+                  <button class="form-control sub">-</button>
+                  <input type="number" class="form-control text-center" value="1">
+                  <button class="form-control add">+</button>
                 </div>
             </div>
           </b-col>

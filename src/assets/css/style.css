@@ -175,14 +175,7 @@ body{
     font-family: roboto;
   }
   
-  .loginmodal-container input[type=submit]{
-    width: 100%;
-    display: block;
-    margin-bottom: 10px;
-    position: relative;
-  }
-  
-  .loginmodal-container input[type=text],input[type=email], input[type=password] {
+  /* .loginmodal-container input[type=text],input[type=email], input[type=password] {
     height: 44px;
     font-size: 16px;
     width: 100%;
@@ -191,7 +184,6 @@ body{
     background: #fff;
     border: 1px solid #d9d9d9;
     border-top: 1px solid #c0c0c0;
-    /* border-radius: 2px; */
     padding: 0 8px;
     box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -203,6 +195,19 @@ body{
     -moz-box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
     -webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
     box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+  } */
+
+  .loginmodal-container form input 
+  {
+    position: relative;
+    width: 100%;
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 1.35rem;
+    outline: none;
+    background: transparent;
+    box-shadow: none;
+    border: none;
+    border-bottom: 2px solid #000;
   }
   
   .loginmodal {
@@ -212,13 +217,9 @@ body{
     font-weight: 700;
     height: 36px;
     padding: 0 8px;
-  /* border-radius: 3px; */
-  /* -webkit-user-select: none;
-    user-select: none; */
   }
   
-  .loginmodal-submit {
-    /* border: 1px solid #3079ed; */
+  .loginmodal-container button {
     border: 0px;
     color: #fff;
     text-shadow: 0 1px rgba(0,0,0,0.1); 
@@ -226,15 +227,13 @@ body{
     padding: 17px 0px;
     font-family: roboto;
     font-size: 14px;
-    /* background-image: -webkit-gradient(linear, 0 0, 0 100%,   from(#4d90fe), to(#4787ed)); */
+    width: 100%;
   }
   
-  .loginmodal-submit:hover {
-    /* border: 1px solid #2f5bb7; */
+  .loginmodal-container button:hover {
     border: 0px;
     text-shadow: 0 1px rgba(0,0,0,0.3);
     background-color: #357ae8;
-    /* background-image: -webkit-gradient(linear, 0 0, 0 100%,   from(#4d90fe), to(#357ae8)); */
   }
   
   .loginmodal-container a{
@@ -526,6 +525,34 @@ body{
 .product-quantity .addcart:hover
 {
   background: orange;
+}
+
+.product-count .sub
+{
+  border-top-left-radius: 10px !important;
+  border-bottom-left-radius: 10px !important;
+  border-top-right-radius: 0px !important;
+  border-bottom-right-radius: 0px !important;
+  cursor: pointer; 
+  background: orange;
+  padding: 1px;
+}
+
+.product-count .add
+{
+  border-top-left-radius: 0px !important;
+  border-bottom-left-radius: 0px !important;
+  border-top-right-radius: 10px !important;
+  border-bottom-right-radius: 10px !important;
+  cursor: pointer; 
+  background: orange;
+  padding: 1px;
+  margin-right: 20px;
+}
+
+.product-footer .product-count
+{
+  margin-bottom: 5px;
 }
 
 
