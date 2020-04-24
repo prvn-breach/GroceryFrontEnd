@@ -237,10 +237,10 @@
 
           <b-col md="3">
             <h1>Follow Us On</h1>
-            <p><font-awesome-icon icon="facebook" class="fa facebook"></font-awesome-icon>Facebook</p>
+            <!-- <p><font-awesome-icon icon="facebook" class="fa facebook"></font-awesome-icon>Facebook</p>
             <p><font-awesome-icon icon="youtube" class="fa youtube"></font-awesome-icon>Youtube</p>
             <p><font-awesome-icon icon="linkedin" class="fa linkedin"></font-awesome-icon>Linked In</p>
-            <p><font-awesome-icon icon="twitter" class="fa twitter"></font-awesome-icon>Twitter</p>
+            <p><font-awesome-icon icon="twitter" class="fa twitter"></font-awesome-icon>Twitter</p> -->
           </b-col>
         </b-row>
       </b-container>

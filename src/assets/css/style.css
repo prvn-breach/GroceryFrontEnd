@@ -1,3 +1,8 @@
+.header{
+  background: #fff;
+  font-size: 13px;
+}
+
 *
 {
     margin: 0;
@@ -21,14 +26,14 @@ body{
     position: sticky;
     background: #fff;
     margin-bottom: 20px;
-    border-bottom: 3px solid orange;
+    border-bottom: 3px solid green;
     z-index: 2;
 }
 .form-control
 {
     margin-top: 9px;
     margin-left: 30px;
-    border: 1px solid orange !important;
+    border: 1px solid green !important;
     border-top-left-radius: 0px !important;
     border-bottom-left-radius: 0px !important;
     border-top-right-radius: 0 !important;
@@ -37,8 +42,8 @@ body{
 }
 .input-group-text
 {
-    background: orange !important;
-    border: 1px solid orange !important;
+    background: green !important;
+    border: 1px solid green !important;
     margin: 8.5px 10px 3px 0 !important;
     border-top-left-radius: 0px !important;
     border-bottom-left-radius: 0px !important;
@@ -73,7 +78,7 @@ body{
     list-style-type: none;
     padding: 15px 35px;
     text-align: center;
-    background-color: orange;
+    background-color: green;
     cursor: pointer;
 }
 .menu-bar ul li a
@@ -89,9 +94,9 @@ body{
 }
 .categories
 {
-    background: orange !important;
+    background: green !important;
     font-weight: bold;
-    border:8px solid orange !important;
+    border:8px solid green !important;
     margin:8.5px 0px 3px 0 !important;
     border-top-left-radius: 0px !important;
     border-bottom-left-radius: 0px !important;
@@ -108,6 +113,7 @@ body{
   border-bottom-left-radius: 0px !important;
   border-top-right-radius: 0px !important;
   border-bottom-right-radius: 0px !important;
+  width: 200%;
 }
 .dropdown:hover .cats
 {
@@ -125,7 +131,7 @@ body{
 }
 .dropdown ul li:hover
 {
-  color: orange;
+  color: green;
 }
 .dropdown-submenu .subcats1
 {
@@ -155,9 +161,33 @@ body{
 }
 .fa-angle-right
 {
-  margin-left: 15px;
+  margin-right: 15px;
+  float: right;
 }
 
+/*********usermenu**********/
+.usermenu{
+  cursor: pointer;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  margin: 23px 0 !important;
+  border-top-left-radius: 0px !important;
+  border-bottom-left-radius: 0px !important;
+  border-top-right-radius: 0px !important;
+  border-bottom-right-radius: 0px !important;
+}
+
+.usermenu span{
+  margin-left: 10px !important;
+}
+
+.usermenu:hover{
+  background: #357ae8;
+  color: #fff;
+}
+
+.faSignOutAlt {
+  margin-left: 10px !important;
+}
 
 /****** LOGIN MODAL ******/
 .loginmodal-container{
@@ -175,7 +205,7 @@ body{
     font-family: roboto;
   }
   
-  /* .loginmodal-container input[type=text],input[type=email], input[type=password] {
+  .loginmodal-container input[type=text],input[type=email], input[type=password] {
     height: 44px;
     font-size: 16px;
     width: 100%;
@@ -195,9 +225,9 @@ body{
     -moz-box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
     -webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
     box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
-  } */
+  }
 
-  .loginmodal-container form input 
+  /* .loginmodal-container form input 
   {
     position: relative;
     width: 100%;
@@ -208,7 +238,7 @@ body{
     box-shadow: none;
     border: none;
     border-bottom: 2px solid #000;
-  }
+  } */
   
   .loginmodal {
     text-align: center;
@@ -250,11 +280,10 @@ body{
     font-size: 12px;
   }
 
-
   /****** SIGNUP MODAL ******/
 .signmodal-container{
-  padding: 30px;
-  max-width: 350px;
+  /* padding: 30px; */
+  /* max-width: 350px; */
   width: 100% !important;
   margin:0 auto;
   overflow: hidden;
@@ -309,8 +338,7 @@ body{
   user-select: none; */
 }
 
-.signmodal-submit {
-  /* border: 1px solid #3079ed; */
+.signmodal-container button {
   border: 0px;
   color: #fff;
   text-shadow: 0 1px rgba(0,0,0,0.1); 
@@ -318,15 +346,13 @@ body{
   padding: 17px 0px;
   font-family: roboto;
   font-size: 14px;
-  /* background-image: -webkit-gradient(linear, 0 0, 0 100%,   from(#4d90fe), to(#4787ed)); */
+  width: 100%;
 }
 
-.signmodal-submit:hover {
-  /* border: 1px solid #2f5bb7; */
+.signmodal-container button:hover {
   border: 0px;
   text-shadow: 0 1px rgba(0,0,0,0.3);
   background-color: #357ae8;
-  /* background-image: -webkit-gradient(linear, 0 0, 0 100%,   from(#4d90fe), to(#357ae8)); */
 }
 
 .signmodal-container a{
@@ -342,6 +368,7 @@ body{
 .sign-help{
   font-size: 12px;
 }
+
 
 /*****max-width:980px****/
 @media only screen and (max-width: 980px)
@@ -380,7 +407,7 @@ body{
 }
 .slider .caursol
 {
-  box-shadow: 2px 1px 2px 2px orange;
+  box-shadow: 2px 1px 2px 2px green;
 }
 .slider .image
 {
@@ -412,7 +439,7 @@ body{
 
 .title-box
 {
-  background: orange;
+  background: green;
   color: #fff;
   width: 180px;
   padding: 4px 10px;
@@ -427,7 +454,7 @@ body{
 .title-box::after
 {
   content: '';
-  border-top: 40px solid orange;
+  border-top: 40px solid green;
   border-right: 50px solid transparent;
   position: absolute;
   display: flex;
@@ -524,7 +551,7 @@ body{
 
 .product-quantity .addcart:hover
 {
-  background: orange;
+  background: green;
 }
 
 .product-count .sub
@@ -534,7 +561,7 @@ body{
   border-top-right-radius: 0px !important;
   border-bottom-right-radius: 0px !important;
   cursor: pointer; 
-  background: orange;
+  background: green;
   padding: 1px;
 }
 
@@ -545,7 +572,7 @@ body{
   border-top-right-radius: 10px !important;
   border-bottom-right-radius: 10px !important;
   cursor: pointer; 
-  background: orange;
+  background: green;
   padding: 1px;
   margin-right: 20px;
 }
@@ -597,4 +624,45 @@ body{
 .footer p
 {
   font-size: 12px;
+}
+
+/********************************************************CartPage************************************************************/
+.cart-product{
+  border-top-left-radius: 0px !important;
+  border-bottom-left-radius: 0px !important;
+  border-top-right-radius: 0px !important;
+  border-bottom-right-radius: 0px !important;
+  background: #fff;
+  box-shadow: 1px 1px 2px 2px #c0c0c0 !important;
+}
+
+.cart .price{
+  background: #fff;
+  margin-left: 30px !important;
+  box-shadow: 1px 1px 2px 2px #c0c0c0 !important;
+}
+
+.cart-header{
+  background: #fff;
+}
+
+.cart-header label{
+  margin: 15px 0 !important;
+  margin-left: 5px !important;
+  font-weight: bold;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.cart .price .label1{
+  margin: 15px 0 !important;
+  margin-left: 5px !important;
+  color: #a0a0a0;
+  font-weight: bold;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.cart .price label{
+  margin-left: 5px !important;
+  font-weight: bold;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
