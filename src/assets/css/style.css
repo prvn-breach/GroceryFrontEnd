@@ -397,6 +397,21 @@ body{
         height: 57px;
         width: 100%;
     }
+
+    .slider
+    { 
+      margin: 1px !important;
+    }
+    .slider .caursol
+    {
+      box-shadow: 2px 1px 2px 2px green;
+      height: 200px !important;
+    }
+    .slider .image
+    {
+      width: 100% !important;
+      height: 500px !important;
+    }
 }
 
 /*--------------slider Css -----------------*/
@@ -424,14 +439,15 @@ body{
 .featured-categories img
 {
   width: 100%;
-  height: 80%;
-  padding: 20px 0;
+  height: 100%;
   transition: 1s;
   cursor: pointer;
+  box-shadow: 0px 0px 1px 1px #666;
 }
 .featured-categories img:hover
 {
   transform: scale(1.1);
+  box-shadow: 1px 1px 2px 2px #666;
 }
 
 
