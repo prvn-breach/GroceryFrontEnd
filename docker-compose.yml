@@ -1,7 +1,7 @@
 version: '3'
 services:
-  grocery-node:
-    container_name: grocery-node
+  node:
+    container_name: node
     build:
       context: .
       dockerfile: Dockerfile
@@ -9,4 +9,4 @@ services:
        - ../:/var/www
     command: tail -f /dev/null
     ports:
-      - "9090:8080"
+      - "8080:8080"
