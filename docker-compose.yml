@@ -6,7 +6,7 @@ services:
       context: .
       dockerfile: Dockerfile
     volumes:
-       - ../:/var/www
+       - ../:/var/www/grocery
     command: tail -f /dev/null
     ports:
       - "8080:8080"

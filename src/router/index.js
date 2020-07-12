@@ -1,21 +1,68 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
+import DefaultLayout from "../views/DefaultLayout.vue";
 
 Vue.use(VueRouter);
 
 const routes = [
   {
     path: "/",
-    name: "Dashboard",
-    component: () =>  
-         import("../views/Dashboard.vue")
+    redirect: "/home"
   },
   {
-    path: "/cart",
-    name: "Cart",
+    path: '/',
+    component: DefaultLayout,
+    children: [
+      {
+        path: "/home",
+        name: "Dashboard",
+        component: () => 
+             import("../views/Dashboard.vue")
+      },
+      {
+        path: "/cart",
+        name: "Cart",
+        component: () => 
+             import("../views/Cart.vue")
+      },
+      {
+        path: "/basket",
+        name: "Basket",
+        component: () => 
+             import("../views/Basket.vue")
+      }
+    ]
+  },
+  {
+    path: "/login",
+    name: "Login",
     component: () => 
-         import("../views/Cart.vue")
+         import("../views/Login.vue")
   }
+  // {
+  //   path: "/",
+  //   name: "Dashboard",
+  //   component: () =>  
+  //        import("../views/Dashboard.vue")
+  // },
+  // {
+  //   path: "/login",
+  //   name: "Login",
+  //   component: () => 
+  //         import("../views/Login.vue")
+  // },
+  // {
+  //   path: "/cart",
+  //   name: "Cart",
+  //   component: () => 
+  //        import("../views/Cart.vue")
+  // },
+  // {
+  //   path: "/basket",
+  //   name: "Basket",
+  //   component: () => 
+  //        import("../views/Basket.vue")
+  // }
 ];
 
 const router = new VueRouter({
