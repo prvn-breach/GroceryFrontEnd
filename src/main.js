@@ -30,7 +30,8 @@ import {
   faShoppingBasket,
   faSignOutAlt,
   faPhoneAlt,
-  faMapMarkedAlt
+  faMapMarkedAlt,
+  faTag
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 library.add(
@@ -47,7 +48,8 @@ library.add(
   faShoppingBasket,
   faSignOutAlt,
   faPhoneAlt,
-  faMapMarkedAlt
+  faMapMarkedAlt,
+  faTag
 );
 
 Vue.component("font-awesome-icon", FontAwesomeIcon);
