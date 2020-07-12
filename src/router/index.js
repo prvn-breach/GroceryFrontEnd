@@ -34,35 +34,11 @@ const routes = [
     ]
   },
   {
-    path: "/login",
-    name: "Login",
+    path: "/auth",
+    name: "Auth",
     component: () => 
-         import("../views/Login.vue")
+         import("../views/Auth.vue")
   }
-  // {
-  //   path: "/",
-  //   name: "Dashboard",
-  //   component: () =>  
-  //        import("../views/Dashboard.vue")
-  // },
-  // {
-  //   path: "/login",
-  //   name: "Login",
-  //   component: () => 
-  //         import("../views/Login.vue")
-  // },
-  // {
-  //   path: "/cart",
-  //   name: "Cart",
-  //   component: () => 
-  //        import("../views/Cart.vue")
-  // },
-  // {
-  //   path: "/basket",
-  //   name: "Basket",
-  //   component: () => 
-  //        import("../views/Basket.vue")
-  // }
 ];
 
 const router = new VueRouter({

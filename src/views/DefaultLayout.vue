@@ -67,7 +67,7 @@
             <a @click="$bvModal.show('sign-modal')">Sign Up</a>
           </li>
           <li v-if="!userDetails">
-            <router-link :to="{name:'Login'}">
+            <router-link :to="{name:'Auth'}">
               <a>Login</a>
             </router-link>
           </li>
