@@ -13,7 +13,15 @@
       <b-row cols="2" class="row1">
             <b-img src="https://entrackr.com/wp-content/uploads/2018/01/bigbasket-image-1-1200x600.jpg"></b-img>  
 
-            <b-form-input size="lg" placeholder="Search for Products..." type="search" class="search-input" aria-label="Text input with checkbox"></b-form-input>
+            <b-form-input 
+              size="lg" 
+              placeholder="Search for Products..." 
+              onfocus="this.placeholder = ''" 
+              onblur="this.placeholder = 'Search for Products...'" 
+              type="search" 
+              class="search-input" 
+              aria-label="Text input with checkbox">
+            </b-form-input>
 
             <b-row cols="1" class="basket">
               <b-col>
