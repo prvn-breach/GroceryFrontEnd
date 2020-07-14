@@ -31,7 +31,9 @@ import {
   faSignOutAlt,
   faPhoneAlt,
   faMapMarkedAlt,
-  faTag
+  faTag,
+  faMapMarker,
+  faUser
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 library.add(
@@ -49,7 +51,9 @@ library.add(
   faSignOutAlt,
   faPhoneAlt,
   faMapMarkedAlt,
-  faTag
+  faTag,
+  faMapMarker,
+  faUser
 );
 
 Vue.component("font-awesome-icon", FontAwesomeIcon);
