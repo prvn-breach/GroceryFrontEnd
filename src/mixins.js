@@ -10,5 +10,13 @@ module.exports = {
             this.$apiHeaders["headers"]["Authorization"] = "Bearer " + user.access_token;
         }
         return this.$apiHeaders;
+    },
+    getTitle: function (vm) {
+        const { title } = vm.$options
+        if (title) {
+            return typeof title === 'function'
+                ? title.call(vm)
+                : title
+        }
     }
 }

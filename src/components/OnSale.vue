@@ -1,141 +1,117 @@
 <template>
-    <section class="on-sale">
-      <b-container>
-        <div class="title-box">
-          <h2>Basket</h2>
-        </div>
-        <b-row>
-          <b-col md="3">
-            <div class="product-top">
-              <img src="https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX3424674.jpg">
-              <div class="overlay-right">
-                <button class="btn btn-secondary" title="Quick Shop">
-                  <font-awesome-icon icon="eye" class="fa"></font-awesome-icon>
-                </button>
-                <button class="btn btn-secondary" title="Add to Wishlist">
-                  <font-awesome-icon icon="heart" class="fa"></font-awesome-icon>
-                </button>
-                <button class="btn btn-secondary" title="Add to Cart">
-                  <font-awesome-icon icon="shopping-cart" class="fa"></font-awesome-icon>
-                </button>
-              </div>
-            </div>
-            <div class="product-bottom">
-              <h5>Pineapple</h5>
-            </div>
-            <div class="product-footer">
-              <h6>MRP Rs 100</h6>
-                <!-- <div class="input-group product-quantity">
-                  <span class="input-group-addon">Qty</span>
-                  <input type="number" class="form-control text-center" value="1">  
-                  <button class="form-control addcart">Add
-                    <font-awesome-icon icon="shopping-basket" class="shopping-basket"></font-awesome-icon>  
-                  </button>   
-                </div> -->
-
-                <div class="input-group product-count">
-                  <button class="form-control sub">-</button>
-                  <input type="number" class="form-control text-center" value="1">
-                  <button class="form-control add">+</button>
-                </div>
-            </div>
-          </b-col>
-
-          <b-col md="3">
-            <div class="product-top">
-              <img src="https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX3424674.jpg">
-              <div class="overlay-right">
-                <button class="btn btn-secondary" title="Quick Shop">
-                  <font-awesome-icon icon="eye" class="fa"></font-awesome-icon>
-                </button>
-                <button class="btn btn-secondary" title="Add to Wishlist">
-                  <font-awesome-icon icon="heart" class="fa"></font-awesome-icon>
-                </button>
-                <button class="btn btn-secondary" title="Add to Cart">
-                  <font-awesome-icon icon="shopping-cart" class="fa"></font-awesome-icon>
-                </button>
-              </div>
-            </div>
-            <div class="product-bottom">
-              <h5>Pineapple</h5>
-            <div class="product-footer">
-              <h6>MRP Rs 100</h6>
-                <div class="input-group product-quantity">
-                  <span class="input-group-addon">Qty</span>
-                  <input type="number" class="form-control text-center" value="1">  
-                  <button class="form-control addcart">Add
-                    <font-awesome-icon icon="shopping-basket" class="shopping-basket"></font-awesome-icon>  
-                  </button>  
-                </div>
-            </div>
-            </div>
-          </b-col>
-
-          <b-col md="3">
-            <div class="product-top">
-              <img src="https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX3424674.jpg">
-              <div class="overlay-right">
-                <button class="btn btn-secondary" title="Quick Shop">
-                  <font-awesome-icon icon="eye" class="fa"></font-awesome-icon>
-                </button>
-                <button class="btn btn-secondary" title="Add to Wishlist">
-                  <font-awesome-icon icon="heart" class="fa"></font-awesome-icon>
-                </button>
-                <button class="btn btn-secondary" title="Add to Cart">
-                  <font-awesome-icon icon="shopping-cart" class="fa"></font-awesome-icon>
-                </button>
-              </div>
-            </div>
-            <div class="product-bottom">
-              <h5>Pineapple</h5>
-            <div class="product-footer">
-              <h6>MRP Rs 100</h6>
-                <div class="input-group product-quantity">
-                  <span class="input-group-addon">Qty</span>
-                  <input type="number" class="form-control text-center" value="1">  
-                  <button class="form-control addcart">Add
-                    <font-awesome-icon icon="shopping-basket" class="shopping-basket"></font-awesome-icon>  
-                  </button>    
-                </div>
-            </div>
-            </div>
-          </b-col>
-
-          <b-col md="3">
-            <div class="product-top">
-              <img src="https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX3424674.jpg">
-              <div class="overlay-right">
-                <button class="btn btn-secondary" title="Quick Shop">
-                  <font-awesome-icon icon="eye" class="fa"></font-awesome-icon>
-                </button>
-                <button class="btn btn-secondary" title="Add to Wishlist">
-                  <font-awesome-icon icon="heart" class="fa"></font-awesome-icon>
-                </button>
-                <button class="btn btn-secondary" title="Add to Cart">
-                  <font-awesome-icon icon="shopping-cart" class="fa"></font-awesome-icon>
-                </button>
-              </div>
-            </div>
-            <div class="product-bottom">
-              <h5>Pineapple</h5>
-            <div class="product-footer">
-              <h6>MRP Rs 100</h6>
-                <div class="input-group product-quantity">
-                  <span class="input-group-addon">Qty</span>
-                  <input type="number" class="form-control text-center" value="1">  
-                  <button class="form-control addcart">Add
-                    <font-awesome-icon icon="shopping-basket" class="shopping-basket"></font-awesome-icon>  
-                  </button>  
-                </div>
-            </div>
-            </div>
-          </b-col>
-        </b-row>
-      </b-container>
-    </section>
+  <section class="on-sale">
+    <b-container>
+      <div class="title-box">
+        <h2>Basket</h2>
+      </div>
+      <div>
+        <b-card-group deck>
+          <b-card
+            v-for="item in items"
+            :key="item.id"
+            :title="item.title"
+            :img-src="item.imageUrl"
+            img-alt="Image"
+            img-top
+          >
+            <b-card-text>{{item.measuringIn}}</b-card-text>
+            <template v-slot:footer>
+              <b-row cols="2" v-if="item.isAddCart == false">
+                <b-col col="3" md="4">
+                  <b-button variant="warning" @click="showCart(item)">Add Cart</b-button>
+                </b-col>
+                <b-col>
+                  <b-form-input type="number"></b-form-input>
+                </b-col>
+              </b-row>
+              
+              <b-input-group class="mt-3" v-else>
+                <template v-slot:prepend>
+                  <b-button variant="success" @click="increaseQty(item)">+</b-button>
+                </template>
+                <b-form-input type="number" v-model="item.qty" class="text-center text-justify"></b-form-input>
+                <template v-slot:append>
+                  <b-button variant="success" @click="decreaseQty(item)">-</b-button>
+                </template>
+              </b-input-group>
+            </template>
+          </b-card>
+        </b-card-group>
+      </div>
+    </b-container>
+  </section>
 </template>
 <script>
-    export default {
-        name: "OnSale"
+export default {
+  name: "OnSale",
+  data() {
+    return {
+      items: [
+        {
+          id: "1",
+          imageUrl:
+            "https://www.bigbasket.com/media/uploads/p/s/10000148_28-fresho-onion.jpg",
+          title: "Onion",
+          price: "19",
+          measuringIn: "1 kg",
+          isAddCart: false,
+          qty: 0
+        },
+        {
+          id: "2",
+          imageUrl:
+            "https://www.bigbasket.com/media/uploads/p/s/10000159_25-fresho-potato.jpg",
+          title: "Potato",
+          price: "42",
+          measuringIn: "1 kg",
+          isAddCart: false,
+          qty: 0
+        },
+        {
+          id: "3",
+          imageUrl:
+            "https://www.bigbasket.com/media/uploads/p/s/10000200_17-fresho-tomato-hybrid.jpg",
+          title: "Tomato-Hybrid",
+          price: "26",
+          measuringIn: "1 kg",
+          isAddCart: false,
+          qty: 0
+        },
+        {
+          id: "4",
+          imageUrl:
+            "https://www.bigbasket.com/media/uploads/p/s/10000069_20-fresho-capsicum-green.jpg",
+          title: "Capsicum - Green",
+          price: "50",
+          measuringIn: "500 g",
+          isAddCart: false,
+          qty: 0
+        },
+        {
+          id: "5",
+          imageUrl:
+            "https://www.bigbasket.com/media/uploads/p/s/10000103_16-fresho-cucumber.jpg",
+          title: "Cucumber",
+          price: "11",
+          measuringIn: "500 g",
+          isAddCart: false,
+          qty: 0
+        }
+      ],
+      // isAddCart: false,
+      // qty: 0
+    };
+  },
+  methods: {
+    showCart(item) {
+      item.isAddCart = true;
+    },
+    increaseQty(item) {
+      item.qty++;
+    },
+    decreaseQty(item) {
+      item.qty--;
     }
+  }
+};
 </script>

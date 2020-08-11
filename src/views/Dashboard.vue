@@ -1,11 +1,16 @@
 <template>
   <div>
-    <Coursal></Coursal>
-    <Categories></Categories>
-    <OnSale></OnSale>
-    <WebsiteFeature></WebsiteFeature>
-    <Footer></Footer>
-    <router-view />                            
+    <Coursal />
+
+    <Categories />
+
+    <OnSale />
+
+    <WebsiteFeature />
+
+    <Footer />
+
+    <router-view />
   </div>
 </template>
 <script>
@@ -15,12 +20,19 @@ import WebsiteFeature from "../components/WebsiteFeature";
 import Footer from "../components/Footer";
 import Coursal from "../components/Coursal";
 export default {
-    components: {
-      Categories,
-      OnSale,
-      WebsiteFeature,
-      Footer,
-      Coursal
+  title: "Online Grocery Food Delivery",
+  components: {
+    Categories,
+    OnSale,
+    WebsiteFeature,
+    Footer,
+    Coursal
+  },
+  created() {
+    const title = this.getTitle(this);
+    if (title) {
+      document.title = title;
     }
-}
+  }
+};
 </script>

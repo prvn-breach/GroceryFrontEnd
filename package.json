@@ -57,5 +57,17 @@
   "browserslist": [
     "> 1%",
     "last 2 versions"
-  ]
+  ],
+  "description": "## Project setup ``` npm install ```",
+  "main": "babel.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/balwari/grocery-web-ui.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/balwari/grocery-web-ui/issues"
+  },
+  "homepage": "https://github.com/balwari/grocery-web-ui#readme"
 }

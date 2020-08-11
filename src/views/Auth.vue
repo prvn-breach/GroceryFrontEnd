@@ -26,9 +26,16 @@
 import Login from "../components/Login";
 import SignIn from "../components/SignIn";
 export default {
+    title: "Login",
     components: {
         Login,
         SignIn
+    },
+    created() {
+        const title = this.getTitle(this);
+        if (title) {
+            document.title = title;
+        }
     }
 }
 </script>
