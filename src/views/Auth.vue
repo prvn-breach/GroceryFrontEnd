@@ -12,10 +12,10 @@
                 content-class="mt-3"
             >
                 <b-tab title="Login">
-                    <Login></Login>
+                    <Login />
                 </b-tab>
                 <b-tab title="Signup">
-                    <SignIn></SignIn>
+                    <SignUp />
                 </b-tab>
             </b-tabs>
         </div>
@@ -24,12 +24,12 @@
 </template>
 <script>
 import Login from "../components/Login";
-import SignIn from "../components/SignIn";
+import SignUp from "../components/SignUp";
 export default {
     title: "Login",
     components: {
         Login,
-        SignIn
+        SignUp
     },
     created() {
         const title = this.getTitle(this);

@@ -29,3 +29,24 @@
         name: "WebsiteFeature"
     }
 </script>
+<style lang="css">
+  .website-features
+{
+  margin: 60px 0;
+}
+.website-features img 
+{
+  width: 20%;
+}
+.feature-text
+{
+  margin-top: 10px;
+  float: right;
+  width: 80%;
+  padding-left: 20px;
+}
+.feature-box
+{
+  padding-top: 20px;
+}
+</style>

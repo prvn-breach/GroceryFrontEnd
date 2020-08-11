@@ -34,3 +34,20 @@
         name: "Footer"
     }
 </script>
+<style lang="css">
+.footer
+{
+  margin-top: 50px;
+  background: #000;
+  color: #fff;
+}
+.footer h1
+{
+  font-size: 15px;
+  margin: 25px 0;
+}
+.footer p
+{
+  font-size: 12px;
+}
+</style>
