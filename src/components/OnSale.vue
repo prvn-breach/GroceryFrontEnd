@@ -13,6 +13,7 @@
             :img-src="item.imageUrl"
             img-alt="Image"
             img-top
+            class="items"
           >
             <b-card-text>{{item.measuringIn}}</b-card-text>
             <template v-slot:footer>
@@ -105,6 +106,8 @@ export default {
   methods: {
     showCart(item) {
       item.isAddCart = true;
+      this.$store.commit('addCart');
+      console.log(this.$store.getters.items);
     },
     increaseQty(item) {
       item.qty++;
@@ -115,3 +118,9 @@ export default {
   }
 };
 </script>
+<style lang="css">
+.items:hover {
+  border-radius: 0;
+  box-shadow: 0 1px 0 1px rgb(156, 156, 156);
+}
+</style>

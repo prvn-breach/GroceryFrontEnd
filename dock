@@ -4,14 +4,14 @@
 # Usage: ./dock container_name command_to_run param1 param2 param3
 
 # This script assumes user has followed below conventions
-#     1. User has home folder like /home/moin
-#     2. User has all web projects inside /home/moin/www
-#     3. User has mounted /home/moin/www to /var/www on docker container
+#     1. User has home folder like /home/praveen
+#     2. User has all web projects inside /home/praveen/www
+#     3. User has mounted /home/praveen/www to /var/www on docker container
 
 # User home directory is mapped to /var on docker container. Modify as required.
-# Example: HOST:/home/moin => CONTAINER:/var
+# Example: HOST:/home/praveen => CONTAINER:/var
 # Any subfolders like www are mapped automatically
-# Example: HOST:/home/moin/www/restify => CONTAINER:/var/www/restify
+# Example: HOST:/home/praveen/www/restify => CONTAINER:/var/www/restify
 MAP_HOST_DIR="${HOME}"
 MAP_CONTAINER_DIR="/var"
 

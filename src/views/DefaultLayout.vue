@@ -3,11 +3,11 @@
     <div class="container mb-2 mt-2 default-layout">
       <b-row class="text-center justify-content-end head">
         <b-list-group horizontal="md">
-          <b-list-group-item><font-awesome-icon icon="phone-alt" class="phone mr-2" size="lg"></font-awesome-icon>8977425125</b-list-group-item>
-          <b-list-group-item><font-awesome-icon icon="map-marker" class="map mr-2" size="lg"></font-awesome-icon>marikavalasa</b-list-group-item>
-          <b-list-group-item>
-            <a href="/auth"><font-awesome-icon icon="user" class="user mr-2" size="lg"></font-awesome-icon>Login</a>
-          </b-list-group-item>
+            <b-list-group-item><font-awesome-icon icon="phone-alt" class="phone mr-2" size="lg"></font-awesome-icon>8977425125</b-list-group-item>
+            <b-list-group-item><font-awesome-icon icon="map-marker" class="map mr-2" size="lg"></font-awesome-icon>marikavalasa</b-list-group-item>
+            <b-list-group-item>
+                <a href="/auth"><font-awesome-icon icon="user" class="user mr-2" size="lg"></font-awesome-icon>Login</a>
+            </b-list-group-item>
         </b-list-group>
       </b-row>
       <b-row cols="2" class="row1">
@@ -24,21 +24,73 @@
             </b-form-input>
 
             <b-row cols="1" class="basket">
-              <b-col>
-                <font-awesome-icon icon="shopping-basket" class="basket-icon mt-4 ml-3"></font-awesome-icon>
-              </b-col>
-              <span class="mt-2 ml-5">0 items</span>
+                <b-col>
+                    <font-awesome-icon icon="shopping-basket" class="basket-icon mt-4 ml-3"></font-awesome-icon>
+                </b-col>
+                <span class="mt-2 ml-5">0 items</span>
             </b-row>
       </b-row>
 
       <b-row class="border">
-          <b-button size="lg" class="font-weight-bold">SHOP BY CATEGORY<font-awesome-icon icon="angle-down" class="ml-5"></font-awesome-icon></b-button>
+          <b-button 
+            size="lg" 
+            class="categories font-weight-bold"
+            data-toggle="dropdown"
+          >
+            SHOP BY CATEGORY<font-awesome-icon icon="angle-down" class="ml-5"></font-awesome-icon>
+          </b-button>
+          <ul class="dropdown-menu">
+              <li class="dropdown-submenu" v-for="category in categories" :key="category.id">
+                    <span tabindex="-1">
+                        {{ category.name }}
+                        <font-awesome-icon
+                            icon="angle-right"
+                            class="fa-angle-right"
+                            v-if="category.sub_categories.length > 0"
+                        ></font-awesome-icon>
+                    </span>
+                  <div class="dropdown-divider"></div>
+                    <ul class="dropdown-menu submenu">
+                        <li v-for="sub_category in category.sub_categories" :key="sub_category.id">
+                            <span tabindex="-1">{{ sub_category.name }}</span>
+                            <div class="dropdown-divider"></div>
+                        </li>
+                    </ul>
+              </li>
+          </ul>
           <span class="p-3 offers"><font-awesome-icon icon="tag" class="mr-3"></font-awesome-icon>OFFERS</span>
       </b-row>
     </div>
     <router-view/>
   </div>
 </template>
+<script>
+export default {
+    data () {
+        return {
+            categories: [
+                {
+                    id: '1',
+                    name: 'Bakery',
+                    sub_categories: [
+                        { id: '1', name: 'Choclate Cake' },
+                        { id: '2', name: 'Cherries' },
+                        { id: '3', name: "Fruit Biscuits" }
+                    ]
+                },
+                {
+                    id: '2',
+                    name: 'Vegetables',
+                    sub_categories: [
+                        { id: '1', name: 'Brinjal' },
+                        { id: '2', name: 'Papaya' }
+                    ]
+                }
+            ]
+        }
+    }
+}
+</script>>
 <style lang="css">
   .default-layout {
     font: 13px ProximaNovaA-Regular
@@ -84,5 +136,9 @@
   .default-layout .head .list-group .list-group-item {
     background-color: #f1f3f4;
     border: 0;
+  }
+  .btn-secondary:focus {
+      background-color: #0bb513 !important;
+      border-color: none !important;
   }
 </style>
