@@ -9,7 +9,7 @@ export default new Vuex.Store({
   },
   mutations: {
     addCart(state) {
-      state.items = state.items ++;
+      state.items = state.items + 1;
     }
   },
   getters: {

@@ -2,9 +2,23 @@
   <div>
     <Coursal />
 
-    <Categories />
+    <div class="categories-component mt-5">
+        <div class="section-title-wrap">
+            <h2 class="section-title">Categories</h2>
+            <hr class="section-title-hr" />
+        </div>
+        <Categories />
+    </div>
 
-    <OnSale />
+    <div class="smart-basket">
+        <div class="section-title-wrap">
+            <h2 class="section-title">My Smart Basket</h2>
+            <hr class="section-title-hr" />
+        </div>
+        <OnSale />
+    </div>
+
+    <Content />
 
     <WebsiteFeature />
 
@@ -19,6 +33,7 @@ import OnSale from "../components/OnSale";
 import WebsiteFeature from "../components/WebsiteFeature";
 import Footer from "../components/Footer";
 import Coursal from "../components/Coursal";
+import Content from "../components/content";
 export default {
   title: "Online Grocery Food Delivery",
   components: {
@@ -26,7 +41,8 @@ export default {
     OnSale,
     WebsiteFeature,
     Footer,
-    Coursal
+    Coursal,
+    Content
   },
   created() {
     const title = this.getTitle(this);
@@ -36,3 +52,14 @@ export default {
   }
 };
 </script>
+<style lang="css">
+.section-title {
+    color: rgb(68, 68, 68); 
+    text-align: center; 
+    font: 29px ProximaNovaA-Regular;
+}
+.section-title-hr {
+    margin-left: 120px;
+    margin-right: 120px;
+}
+</style>

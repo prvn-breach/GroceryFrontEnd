@@ -33,7 +33,8 @@ import {
   faMapMarkedAlt,
   faTag,
   faMapMarker,
-  faUser
+  faUser,
+  faTruck
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 library.add(
@@ -53,7 +54,8 @@ library.add(
   faMapMarkedAlt,
   faTag,
   faMapMarker,
-  faUser
+  faUser,
+  faTruck
 );
 
 Vue.component("font-awesome-icon", FontAwesomeIcon);

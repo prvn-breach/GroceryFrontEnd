@@ -27,30 +27,33 @@
                 <b-col>
                     <font-awesome-icon icon="shopping-basket" class="basket-icon mt-4 ml-3"></font-awesome-icon>
                 </b-col>
-                <span class="mt-2 ml-5">0 items</span>
+                <span class="mt-2 ml-5">{{ $store.getters.items }} items</span>
             </b-row>
       </b-row>
 
       <b-row class="border">
+        <div class="dropdown">
           <b-button 
             size="lg" 
-            class="categories font-weight-bold"
+          class="font-weight-bold"
             data-toggle="dropdown"
+            aria-haspopup="true"
+            aria-expanded="false"
           >
             SHOP BY CATEGORY<font-awesome-icon icon="angle-down" class="ml-5"></font-awesome-icon>
           </b-button>
-          <ul class="dropdown-menu">
-              <li class="dropdown-submenu" v-for="category in categories" :key="category.id">
+          <ul class="dropdown-menu categories">
+              <li class="dropdown-submenu menu" v-for="category in categories" :key="category.id">
                     <span tabindex="-1">
                         {{ category.name }}
                         <font-awesome-icon
                             icon="angle-right"
-                            class="fa-angle-right"
+                            class="fa-angle-right icon"
                             v-if="category.sub_categories.length > 0"
                         ></font-awesome-icon>
                     </span>
                   <div class="dropdown-divider"></div>
-                    <ul class="dropdown-menu submenu">
+                    <ul class="dropdown-menu submenu" v-if="category.sub_categories.length > 0">
                         <li v-for="sub_category in category.sub_categories" :key="sub_category.id">
                             <span tabindex="-1">{{ sub_category.name }}</span>
                             <div class="dropdown-divider"></div>
@@ -58,7 +61,8 @@
                     </ul>
               </li>
           </ul>
-          <span class="p-3 offers"><font-awesome-icon icon="tag" class="mr-3"></font-awesome-icon>OFFERS</span>
+        </div>
+        <span class="p-3 offers"><font-awesome-icon icon="tag" class="mr-3"></font-awesome-icon>OFFERS</span>
       </b-row>
     </div>
     <router-view/>
@@ -84,6 +88,15 @@ export default {
                     sub_categories: [
                         { id: '1', name: 'Brinjal' },
                         { id: '2', name: 'Papaya' }
+                    ]
+                },
+                {
+                    id: '3',
+                    name: 'Tiffins',
+                    sub_categories: [
+                        { id: '1', name: 'Chapathi' },
+                        { id: '2', name: 'Idli' },
+                        { id: '3', name: 'Bonda' }
                     ]
                 }
             ]
@@ -134,11 +147,44 @@ export default {
     color: red
   }
   .default-layout .head .list-group .list-group-item {
-    background-color: #f1f3f4;
     border: 0;
   }
-  .btn-secondary:focus {
+  .dropdown:hover .categories {
+    display: block;    
+    border-radius: 0;  
+  }
+  .menu:hover .submenu {
+    display: block;
+    border-radius: 0;
+    top: 0;
+    left: 100%;
+    width: 100%;
+  }
+  .btn-secondary:focus, .btn-secondary.focus {
       background-color: #0bb513 !important;
       border-color: none !important;
+  }
+  .btn-secondary:not(:disabled):not(.disabled):active {
+      color: #fff;
+      background-color: #0bb513 !important;
+      border-color: none !important;
+  }
+  .categories {
+      width: 190px;
+      border-radius: 0;
+  }
+  .categories .menu span {
+      cursor: pointer;
+      font: 13px ProximaNovaA-Semibold;
+      padding-left: 15px;
+  }
+  .categories .menu .dropdown-divider {
+      padding: 0;
+  } 
+  .categories .menu:hover {
+      background-color: rgb(207, 203, 203);
+  }
+  .submenu > li:hover {
+    background-color: rgb(207, 203, 203);
   }
 </style>

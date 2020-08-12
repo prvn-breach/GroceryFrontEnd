@@ -1,9 +1,9 @@
 <template>
   <section class="featured-categories">
     <b-container>
-      <div class="title-box">
+      <!-- <div class="title-box">
         <h2>Categories</h2>
-      </div>
+      </div> -->
       <b-row>
         <b-col md="2" v-for="image in images" :key="image.id">
           <img :src="image.url" />
@@ -56,7 +56,7 @@ export default {
 <style lang="css">
   .featured-categories
   {
-    margin: 50px 0;
+    margin-bottom: 50px;
   }
   .featured-categories img
   {

@@ -1,9 +1,9 @@
 <template>
   <section class="on-sale">
     <b-container>
-      <div class="title-box">
+      <!-- <div class="title-box">
         <h2>Basket</h2>
-      </div>
+      </div> -->
       <div>
         <b-card-group deck>
           <b-card
@@ -17,23 +17,31 @@
           >
             <b-card-text>{{item.measuringIn}}</b-card-text>
             <template v-slot:footer>
-              <b-row cols="2" v-if="item.isAddCart == false">
-                <b-col col="3" md="4">
-                  <b-button variant="warning" @click="showCart(item)">Add Cart</b-button>
-                </b-col>
-                <b-col>
-                  <b-form-input type="number"></b-form-input>
-                </b-col>
+              <b-row>
+                  <h5 class="pl-4">MRP: Rs&nbsp;{{ item.price }}</h5>
+                  <p class="pl-4 pr-4"><font-awesome-icon icon="truck" class="mr-2"></font-awesome-icon> Express Delivery: Today 6:00PM - 8:00PM</p>
+              </b-row>
+              <b-row cols="2" v-if="item.isAddCart == false || item.qty == 0">
+                  <b-col>
+                      <b-input-group size="md" prepend="Qty">
+                          <b-form-input type="number" v-model="item.qty"></b-form-input>
+                      </b-input-group>
+                  </b-col>
+                  <b-col col="3" md="4">
+                      <b-button class="cart-btn" @click="showCart(item)">
+                          Add<font-awesome-icon icon="shopping-basket" class="ml-1" size="lg"></font-awesome-icon>
+                      </b-button>
+                  </b-col>
               </b-row>
               
               <b-input-group class="mt-3" v-else>
-                <template v-slot:prepend>
-                  <b-button variant="success" @click="increaseQty(item)">+</b-button>
-                </template>
-                <b-form-input type="number" v-model="item.qty" class="text-center text-justify"></b-form-input>
-                <template v-slot:append>
-                  <b-button variant="success" @click="decreaseQty(item)">-</b-button>
-                </template>
+                  <template v-slot:prepend>
+                      <b-button class="cart-dec-btn" @click="decreaseQty(item)">-</b-button>
+                  </template>
+                  <b-form-input type="number" v-model="item.qty" class="text-center text-justify cart-qty-counter"></b-form-input>
+                  <template v-slot:append>
+                      <b-button class="cart-inc-btn" @click="increaseQty(item)">+</b-button>
+                  </template>
               </b-input-group>
             </template>
           </b-card>
@@ -56,7 +64,7 @@ export default {
           price: "19",
           measuringIn: "1 kg",
           isAddCart: false,
-          qty: 0
+          qty: 1
         },
         {
           id: "2",
@@ -66,7 +74,7 @@ export default {
           price: "42",
           measuringIn: "1 kg",
           isAddCart: false,
-          qty: 0
+          qty: 1
         },
         {
           id: "3",
@@ -76,7 +84,7 @@ export default {
           price: "26",
           measuringIn: "1 kg",
           isAddCart: false,
-          qty: 0
+          qty: 1
         },
         {
           id: "4",
@@ -86,7 +94,7 @@ export default {
           price: "50",
           measuringIn: "500 g",
           isAddCart: false,
-          qty: 0
+          qty: 1
         },
         {
           id: "5",
@@ -96,18 +104,15 @@ export default {
           price: "11",
           measuringIn: "500 g",
           isAddCart: false,
-          qty: 0
+          qty: 1
         }
-      ],
-      // isAddCart: false,
-      // qty: 0
+      ]
     };
   },
   methods: {
     showCart(item) {
       item.isAddCart = true;
       this.$store.commit('addCart');
-      console.log(this.$store.getters.items);
     },
     increaseQty(item) {
       item.qty++;
@@ -120,7 +125,41 @@ export default {
 </script>
 <style lang="css">
 .items:hover {
-  border-radius: 0;
-  box-shadow: 0 1px 0 1px rgb(156, 156, 156);
+    border-radius: 0;
+    box-shadow: 0 1px 0 1px rgb(156, 156, 156);
+}
+.items .cart-btn {
+    text-transform: uppercase;
+    width: 70px;
+    border-radius: 4px;
+    border: 1px solid #fee67c;
+    background: #fee67c;
+    color: #000;
+}
+.items .cart-btn:hover {
+    background: linear-gradient(180deg,#fee67c 0,#f2cb76);
+}
+.items input::-webkit-outer-spin-button,
+.items input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+.items .cart-qty-counter {
+    background: #fee67c;
+}
+.items .cart-inc-btn {
+    border: 1px solid #dedede;
+    /* border-color: grey; */
+    color: #000;
+    padding: 0 4px;
+    background: linear-gradient(180deg,#fff 0,#eaeaea 99%) repeat scroll 0 0 transparent;
+    width: 20px;
+}
+.items .cart-dec-btn {
+    border: 1px solid #dedede;
+    color: #000;
+    padding: 0 4px;
+    background: linear-gradient(180deg,#fff 0,#eaeaea 99%) repeat scroll 0 0 transparent;
+    width: 20px;
 }
 </style>
